@@ -10,6 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author kevin
  */
-public interface Repositorio extends JpaRepository<Medico, String>{
+public interface Repositorio extends JpaRepository<Medico, Long>{
     
 }

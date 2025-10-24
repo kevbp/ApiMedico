@@ -22,16 +22,16 @@ public class Servicio {
         return repo.save(med);
     }
 
-    public Medico buscar(String cod) {
-        return repo.findById(cod).orElse(null);
+    public Medico buscar(Long id) {
+        return repo.findById(id).orElse(null);
     }
 
     public List<Medico> listar() {
         return repo.findAll();
     }
 
-    public Medico actualizar(String cod, Medico med) {
-        return repo.findById(cod).map(existing -> {
+    public Medico actualizar(Long id, Medico med) {
+        return repo.findById(id).map(existing -> {
             existing.setNom(med.getNom());
             existing.setApe(med.getApe());
             existing.setSpe(med.getSpe());
@@ -39,7 +39,7 @@ public class Servicio {
         }).orElse(null);
     }
 
-    public void eliminar(String cod) {
-        repo.deleteById(cod);
+    public void eliminar(Long id) {
+        repo.deleteById(id);
     }
 }

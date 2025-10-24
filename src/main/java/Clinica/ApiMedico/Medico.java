@@ -5,6 +5,8 @@
 package Clinica.ApiMedico;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 /**
@@ -14,7 +16,8 @@ import jakarta.persistence.Id;
 @Entity
 public class Medico {
     @Id
-    private String cod;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String id;
     private String nom;
     private String ape;
     private String spe;
@@ -22,19 +25,19 @@ public class Medico {
     public Medico() {
     }
 
-    public Medico(String cod, String nom, String ape, String spe) {
-        this.cod = cod;
+    public Medico(String id, String nom, String ape, String spe) {
+        this.id = id;
         this.nom = nom;
         this.ape = ape;
         this.spe = spe;
     }
 
-    public String getCod() {
-        return cod;
+    public String getId() {
+        return id;
     }
 
-    public void setCod(String cod) {
-        this.cod = cod;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNom() {
@@ -60,6 +63,6 @@ public class Medico {
     public void setSpe(String spe) {
         this.spe = spe;
     }
-    
+
     
 }

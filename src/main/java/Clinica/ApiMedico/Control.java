@@ -31,9 +31,9 @@ public class Control {
         return serv.grabar(med);
     }
 
-    @GetMapping("/buscar/{cod}")
-    public Medico buscar(@PathVariable String cod) {
-        return serv.buscar(cod);
+    @GetMapping("/buscar/{id}")
+    public Medico buscar(@PathVariable Long id) {
+        return serv.buscar(id);
     }
 
     @GetMapping("/listar")
@@ -41,13 +41,13 @@ public class Control {
         return serv.listar();
     }
 
-    @PutMapping("/actualizar/{cod}")
-    public Medico actualizar(@PathVariable String cod, @RequestBody Medico med) {
-        return serv.actualizar(cod, med);
+    @PutMapping("/actualizar/{id}")
+    public Medico actualizar(@PathVariable Long id, @RequestBody Medico med) {
+        return serv.actualizar(id, med);
     }
 
-    @DeleteMapping("/eliminar/{cod}")
-    public void eliminar(@PathVariable String cod) {
-        serv.eliminar(cod);
+    @DeleteMapping("/eliminar/{id}")
+    public void eliminar(@PathVariable Long id) {
+        serv.eliminar(id);
     }
 }
