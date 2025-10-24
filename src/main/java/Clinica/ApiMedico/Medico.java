@@ -17,7 +17,7 @@ import jakarta.persistence.Id;
 public class Medico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
     private String nom;
     private String ape;
     private String spe;
@@ -25,18 +25,18 @@ public class Medico {
     public Medico() {
     }
 
-    public Medico(String id, String nom, String ape, String spe) {
+    public Medico(Long id, String nom, String ape, String spe) {
         this.id = id;
         this.nom = nom;
         this.ape = ape;
         this.spe = spe;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
